@@ -29,12 +29,12 @@
 				<cloudHubDeployment>
             <uri>https://anypoint.mulesoft.com</uri>
             <muleVersion>4.2.2</muleVersion>
-            <username>${anypoint.username}</username>
-            <password>${anypoint.password}</password>
+            <username>srinu000</username>
+            <password>Srinu@515</password>
             <applicationName>munittest</applicationName>
             <workerType>Micro</workerType>
 		    <redeploy>true</redeploy>
-            <environment>${anypoint.environment}</environment>
+            <environment>sandbox</environment>
         </cloudHubDeployment>
 				</configuration>
 				<executions>
@@ -47,24 +47,7 @@
 		               </execution>
 		            </executions>
 			</plugin>
-			<plugin>
-<groupId>org.codehaus.mojo</groupId>
-<artifactId>properties-maven-plugin</artifactId>
-<version>1.0.0</version>
-<executions>
-<execution>
-<phase>initialize</phase>
-<goals>
-<goal>read-project-properties</goal>
-</goals>
-<configuration>
-<files>
-<file>src/main/resources/init.properties</file>
-</files>
-</configuration>
-</execution>
-</executions>
-</plugin>
+
 		<plugin>
                 <groupId>com.mulesoft.munit.tools</groupId>
                 <artifactId>munit-maven-plugin</artifactId>

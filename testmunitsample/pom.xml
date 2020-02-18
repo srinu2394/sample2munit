@@ -31,7 +31,7 @@
             <muleVersion>4.2.2</muleVersion>
             <username>srinu000</username>
             <password>Srinu@515</password>
-            <applicationName>munit</applicationName>
+            <applicationName>munittest</applicationName>
             <workerType>Micro</workerType>
 		    <redeploy>true</redeploy>
             <environment>Sandbox</environment>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="7b55f82c-de67-4c77-9ead-36bab58e1b3b" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="testmunitsampleFlow" doc:id="4f10eef1-4bc9-4123-86dd-ad2c0c479fd9" >
+		<http:listener doc:name="Listener" doc:id="0170ba04-308b-458c-bfbc-597a77d04b19" config-ref="HTTP_Listener_config" path="/path"/>
+		<set-variable value="data" doc:name="Set Variable" doc:id="451c5a9e-f530-44df-b1bb-767621879875" variableName="code"/>
+		<set-payload value="#[vars.code]" doc:name="Set Payload" doc:id="1ef38248-4e6f-48c2-bf54-ea9465af6ca2" />
+		<logger level="INFO" doc:name="Logger" doc:id="33b6aa06-f77f-460b-af7d-fbda3b59aeb9" message="#[payload]"/>
+	</flow>
+</mule>

@@ -1,7 +1,7 @@
 pipeline{
  agent any
  tools {
-maven 'Maven_3.3.5'
+maven 'maven'
 }
  environment {
     ANYPOINT = credentials('deploy-anypoint-user')

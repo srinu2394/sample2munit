@@ -1,8 +1,8 @@
 pipeline{
  agent any
  environment {
-   ANYPOINT = credentials('deploy-anypoint-user')
-  }
+    ANYPOINT = credentials('deploy-anypoint-user')
+ }
  stages {
  	stage ('Build'){
  		steps {
@@ -14,7 +14,7 @@ pipeline{
  	stage ('Deploy'){
  		steps {
  			withMaven(maven:'maven'){
- 			bat 'mvn -f testmunitsample/pom.xml package deploy  -Dusername=$ANYPOINT_USR -Dpassword=$ANYPOINT_PSW -Denvironment=Development -DmuleDeploy'
+ 				bat 'mvn -f testmunitsample/pom.xml package deploy  -Dusername=$ANYPOINT_USR -Dpassword=$ANYPOINT_PSW -Denvironment=Development -DmuleDeploy'
  			}
  		}
  	}
